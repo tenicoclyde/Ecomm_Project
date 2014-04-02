@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402035346) do
+ActiveRecord::Schema.define(version: 20140402045811) do
+
+  create_table "about_us", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -54,6 +59,13 @@ ActiveRecord::Schema.define(version: 20140402035346) do
     t.datetime "updated_at"
   end
 
+  create_table "contacts", force: true do |t|
+    t.integer  "phone"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "customers", force: true do |t|
     t.string   "fname"
     t.string   "lname"
@@ -63,6 +75,29 @@ ActiveRecord::Schema.define(version: 20140402035346) do
     t.string   "province"
     t.string   "postal"
     t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lineitems", force: true do |t|
+    t.integer  "quantity"
+    t.decimal  "price"
+    t.integer  "product_id"
+    t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "customer_id"
+    t.integer  "product_id"
+    t.date     "order_date"
+    t.date     "shipped_date"
+    t.string   "ship_via"
+    t.string   "shipping_company"
+    t.integer  "tracking_no"
+    t.decimal  "freight"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

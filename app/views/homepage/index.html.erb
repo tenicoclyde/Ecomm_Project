@@ -1,2 +1,12 @@
-<h1>Homepage#index</h1>
-<p>Find me in app/views/homepage/index.html.erb</p>
+<h1>All Products</h1>
+<section>
+ 
+  <% @products.each do |product| %>
+  <h6>Product Name</h6>
+  <p>
+    <image_tag jordan11.jpg >
+  </p>
+  <%= link_to product.name, product %>
+<% end %>
+
+</section>
