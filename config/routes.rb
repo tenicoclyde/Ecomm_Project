@@ -1,5 +1,20 @@
 KicksAreSick::Application.routes.draw do
 
+  get "lineitems/index"
+  get "lineitems/show"
+  get "lineitems/new"
+  get "lineitems/create"
+  get "lineitems/edit"
+  get "lineitems/update"
+  get "lineitems/delete"
+  get "orders/index"
+  get "orders/show"
+  get "orders/new"
+  get "orders/destroy"
+  get "orders/update"
+  get "orders/create"
+  get "orders/edit"
+  get "categories/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'homepage', to: 'homepage#index', as: 'homepage'
