@@ -1,4 +1,14 @@
 KicksAreSick::Application.routes.draw do
+
+  get 'homepage', to: 'homepage#index', as: 'homepage'
+  get "customers/index"
+  get "customers/show"
+  get "customers/new"
+  get "customers/edit"
+  get "customers/update"
+  get "customers/destroy"
+  resources :products
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
