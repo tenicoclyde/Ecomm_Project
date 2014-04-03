@@ -8,6 +8,8 @@
       <th>Category</th>
       <th>Quantity</th>
       <th>Price</th>
+      <th>Brand</th>
+      <th>Image</th>
       <th></th>
       <th></th>
       <th></th>
@@ -22,6 +24,10 @@
         <td><%= product.category_id %></td>
         <td><%= product.quantity %></td>
         <td><%= product.price %></td>
+        <td><%= product.brand %></td>
+        <% if product.image_filename.present? %>
+         <td><%= image_tag product.image_filename, height: '50' %></td>
+        <% end %>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
