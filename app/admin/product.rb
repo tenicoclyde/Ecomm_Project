@@ -4,6 +4,7 @@ index do
   column :description
   column :category_id
   column :quantity
+  column :image
   column :price do |product|
       number_to_currency product.price
   end
